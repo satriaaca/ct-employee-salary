@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dbt
+    tables:
+      - name: raw_employees
+      - name: raw_timesheets
+  
+      

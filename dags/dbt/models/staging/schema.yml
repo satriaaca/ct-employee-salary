@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_employees
+    description: "Clean version of employees"
+    columns:
+      - name: employee_id
+        description: "Employee Id"
+        data_type: "int"
+      - name: branch_id
+        description: "Branch Id"
+        data_type: "int"
+      - name: salary
+        description: "Salary"
+        data_type: "float"
+      - name: join_date
+        description: "Join Date"
+        data_type: "date"
+      - name: resign_date
+        description: "Resign Date"
+        data_type: "date"
+
+  - name: stg_timesheets
+    description: "Clean version of timesheets"
+    columns:
+      - name: timesheet_id
+        description: "Timesheet Id"
+        data_type: "int"
+      - name: employee_id
+        description: "Employee Id"
+        data_type: "int"
+      - name: date
+        description: "Date"
+        data_type: "date"
+      - name: checkin
+        description: "Checkin Time"
+        data_type: "time"
+      - name: checkout
+        description: "Checkout Time"
+        data_type: "time"

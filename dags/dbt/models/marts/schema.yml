@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: salary_per_hour
+    description: "Clean version of employees"
+    columns:
+      - name: year
+        description: "Year"
+        data_type: "int"
+      - name: month
+        description: "Month"
+        data_type: "int"
+      - name: branch_id
+        description: "branch_id"
+        data_type: "int"
+      - name: salary_per_hour
+        description: "Salary Per Hour"
+        data_type: "float"
+  - name: employee_worktime
+    description: "Employee Working Time"
+    columns:
+      - name: employee_id
+        description: "Employee ID"
+        data_type: "int"
+      - name: branch_id
+        description: "Employee ID"
+        data_type: "int"
+      - name: year
+        description: "Employee ID"
+        data_type: "int"
+      - name: month
+        description: "Employee ID"
+        data_type: "int"
+      - name: total_worked_hours
+        description: "Employee ID"
+        data_type: "int"
+  - name: branch_salary
+    description: "Employee Working Time"
+    columns:
+      - name: branch_id
+        description: "Employee ID"
+        data_type: "int"
+      - name: year
+        description: "Employee ID"
+        data_type: "int"
+      - name: month
+        description: "Employee ID"
+        data_type: "int"
+      - name: total_salary
+        description: "Employee ID"
+        data_type: "float"
