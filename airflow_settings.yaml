@@ -1,0 +1,9 @@
+airflow:
+  connections:
+    - conn_id: airflow_db
+      conn_type: postgres
+      conn_host: host.docker.internal
+      conn_schema: postgres
+      conn_login: postgres
+      conn_password: postgres
+      conn_port: 5432
