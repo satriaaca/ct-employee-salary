@@ -8,6 +8,7 @@ from airflow.decorators import dag
 from astro.files import File
 from astro import sql as aql
 from astro.sql.table import Table, Metadata
+import sqlalchemy
 
 
 task_logger = logging.getLogger("airflow.task")
@@ -20,7 +21,7 @@ profile_config = ProfileConfig(
     profile_name="employee_salary",
     target_name="dev",
     profile_mapping=PostgresUserPasswordProfileMapping(
-        conn_id="airflow_db",
+        conn_id=CONNECTION_ID,
         profile_args={"schema": "dbt"},
     ),
 )
@@ -51,6 +52,13 @@ def employee_salary_dags():
             metadata=Metadata(
                 schema="dbt",
             ),
+            columns=[
+                sqlalchemy.Column("employee_id", sqlalchemy.Integer, nullable=False),
+                sqlalchemy.Column("branch_id", sqlalchemy.Integer, nullable=False),
+                sqlalchemy.Column("salary", sqlalchemy.Float, nullable=True),
+                sqlalchemy.Column("join_date", sqlalchemy.Text, nullable=True),
+                sqlalchemy.Column("resign_date", sqlalchemy.Text, nullable=True),
+            ],
         ),
     )
 
@@ -62,6 +70,13 @@ def employee_salary_dags():
             metadata=Metadata(
                 schema="dbt",
             ),
+            columns=[
+                sqlalchemy.Column("timesheet_id", sqlalchemy.Integer, nullable=False),
+                sqlalchemy.Column("employee_id", sqlalchemy.Integer, nullable=False),
+                sqlalchemy.Column("date", sqlalchemy.Text, nullable=True),
+                sqlalchemy.Column("checkin", sqlalchemy.Text, nullable=True),
+                sqlalchemy.Column("checkout", sqlalchemy.Text, nullable=True),
+            ],
         ),
     )
 

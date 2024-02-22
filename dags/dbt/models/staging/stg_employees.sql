@@ -1,5 +1,5 @@
 SELECT
-    employe_id as employee_id,
+    employee_id,
     branch_id,
     salary,
     to_date(join_date, 'YYYY-MM-DD') as join_date,
